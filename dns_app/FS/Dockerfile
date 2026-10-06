@@ -1,0 +1,8 @@
+# Qikai Yang (qy1166) - DCN Lab 3 - FS image
+FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY fs_server.py .
+EXPOSE 9090
+CMD ["python", "-u", "fs_server.py"]
